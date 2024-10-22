@@ -1,0 +1,107 @@
+---
+// components/Member.astro
+
+import LinkButton from "./LinkButton.astro";
+import socialIcons from "@assets/socialIcons";
+
+export interface Props {
+  name: string;
+  bio?: string;
+  url?: string;
+  socials: { name: string; href: string }[];
+  badges?: string[];
+  core?: boolean; 
+}
+
+const { name, bio, url, socials, badges = [], core = false } = Astro.props;
+
+// Define GitHub profile picture URL
+const githubUrl = socials.find(s => s.name === 'Github')?.href;
+const profilePicture = `${githubUrl}.png?size=200`;
+---
+
+<div class="member-profile">
+  <img src={profilePicture} alt={`${name}'s profile picture`} class="profile-picture" />
+  <div class="profile-details">
+    <h2>{name}</h2>
+    {core && badges.length > 0 && ( 
+      <div class="badges">
+        {badges.map(badge => (
+          <span class="badge">{badge}</span> 
+        ))}
+      </div>
+    )}
+    {bio && <p class="bio">{bio}</p>}
+    {url && <a class="website" href={url}>{url}</a>}
+    <div class="social-icons">
+      {socials.map(social => (
+        <LinkButton
+          href={`${social.href}`}
+          className="link-button"
+          title={`${social.name}`}
+        >
+          <Fragment set:html={socialIcons[social.name]} />
+        </LinkButton>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .member-profile {
+    @apply flex items-start gap-4 p-4 border rounded-lg shadow-md h-full;
+  }
+
+  .profile-picture {
+    @apply w-24 h-24 rounded-full border border-gray-300;
+  }
+  
+  .profile-details {
+    @apply flex flex-col justify-start;
+  }
+  
+  h2 {
+    @apply text-xl font-semibold;
+  }
+
+  .badges {
+    @apply flex flex-wrap gap-2 mb-2; /* Flex to allow wrapping */
+  }
+
+  .badge {
+    @apply inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold;
+  }
+
+  .bio {
+    @apply text-gray-700 mb-2;
+  }
+
+  .website {
+    @apply text-blue-500;
+  }
+  
+  .website:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    @apply flex justify-start flex-wrap gap-2 mt-4;
+  }
+
+  .link-button {
+    @apply p-2 hover:rotate-6 transition-transform;
+  }
+
+  /* Dark mode specific styles */
+  html[data-theme="dark"] .bio {
+    @apply text-white; 
+  }
+  
+  html[data-theme="dark"] .member-profile {
+    @apply border-gray-500 shadow-gray-600;
+  }
+
+  html[data-theme="dark"] .website {
+    @apply text-blue-300;
+  }
+</style>

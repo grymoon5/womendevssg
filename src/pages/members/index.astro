@@ -1,0 +1,78 @@
+---
+// src/pages/members/index.astro
+
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Layout from "@layouts/Layout.astro";
+import MemberLayout from "@layouts/MemberLayout.astro";
+import Member from "@components/Member.astro";
+import Hr from "@components/Hr.astro";
+
+
+import { SITE } from "@config";
+import { getCollection } from "astro:content";
+
+const members = await getCollection("members");
+// Separate core members and regular members
+const coreMembers = members.filter(member => member.data.core);
+const regularMembers = members.filter(member => !member.data.core);
+---
+
+<Layout title={`Members | ${SITE.title}`}>
+  <Header activeNav="members" />
+  <MemberLayout pageTitle="Our Community" pageDesc="You can add yourself on this page by making a PR!">
+
+    <h2 class="text-2xl mb-4 text-center font-semibold">Our leaders</h2>
+    <ul class="flex flex-wrap gap-4 mb-5">
+      {coreMembers.map(member => (
+        <li class="flex-1 min-w-[260px]">
+          <Member
+            name={member.data.name}
+            bio={member.data.bio || ""}
+            url={member.data.url || ""}
+            socials={member.data.socials}
+            badges={member.data.badges || []}
+            core={member.data.core || false}
+          />
+        </li>
+      ))}
+    </ul> 
+
+    <Hr/>
+
+    <h2 class="text-2xl my-4 text-center font-semibold">Our members</h2>
+    <ul class="flex flex-wrap gap-4 mt-6"> 
+      {regularMembers.map(member => (
+        <li class="flex-1 min-w-[260px]">
+          <Member
+            name={member.data.name}
+            bio={member.data.bio || ""}
+            url={member.data.url || ""}
+            socials={member.data.socials}
+            badges={member.data.badges || []}
+            core={member.data.core || false}
+          />
+        </li>
+      ))}
+    </ul>
+
+
+  </MemberLayout>
+  <Footer />
+</Layout>
+
+
+
+<style>
+  @media (max-width: 992px) {
+    .members-container {
+      @apply flex-col;
+      align-items: center; 
+    }
+
+    .members-container div{
+      width:100%;
+      margin:auto;
+    }
+  }
+</style>
