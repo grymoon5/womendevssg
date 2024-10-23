@@ -1,7 +1,7 @@
 ---
 author: Victoria Lo
-pubDatetime: 2024-10-23T15:22:00Z
-modDatetime: 2024-10-23T15:22:00Z
+pubDatetime: 2024-10-23T10:22:00Z
+modDatetime: 2024-10-23T10:22:00Z
 title: Adding yourself as a new member
 featured: true
 draft: false
