@@ -1,8 +1,8 @@
 ---
 author: Victoria Lo
 pubDatetime: 2024-10-23T10:22:00Z
-modDatetime: 2024-10-23T10:22:00Z
 title: Adding yourself as a new member
+slug: adding-yourself-as-member
 featured: true
 draft: false
 tags:
