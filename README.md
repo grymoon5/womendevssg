@@ -6,7 +6,7 @@ Women Devs SG is a vibrant, inclusive community for women in tech, based in Sing
 ## Contribute to our site!
 Whether you’re a seasoned tech professional, career-switcher, or student, Women Devs SG welcomes you to contribute to our website! This site is built with Astro.js, a template from Sat Naing's [AstroPaper](https://github.com/satnaing/astro-paper) repo.
 
-If you are new to open source, do check out this useful [Open Source Guide](https://opensource.guide/how-to-contribute/).
+If you are new to open source, do check out this useful [Open Source Guide](https://opensource.guide/how-to-contribute/) and ensure you have read our [CONTRIBUTING](./.github/CONTRIBUTING.md) guide.
 
 For contributions, we welcome:
 - New feature requests
