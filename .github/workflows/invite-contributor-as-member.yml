@@ -1,0 +1,27 @@
+name: Invite Contributor to Organization
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  add_contributor:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: Check if the user is already a member
+        id: check-member
+        run: |
+          curl -s \
+            -H "Authorization: Bearer ${{ secrets.ORG_ADMIN_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/orgs/Women-Devs-SG/members/${{ github.event.pull_request.user.login }} \
+            | jq -r '.message' | grep -q "Not Found" || echo "Already a member"
+      - name: Invite Contributor to Organization
+        if: steps.check-member.outputs.status == 'Not Found'
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.ORG_ADMIN_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/orgs/Women-Devs-SG/invitations \
+            -d '{"invitee_id": "${{ github.event.pull_request.user.id }}"}'
