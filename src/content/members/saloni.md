@@ -1,6 +1,6 @@
 ---
 name: "Saloni Kaur"
-bio: "This is my bio."
+bio: "Director @ Women Devs SG"
 core: true
 socials:
   - name: "LinkedIn"

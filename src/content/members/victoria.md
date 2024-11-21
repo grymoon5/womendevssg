@@ -1,6 +1,6 @@
 ---
 name: "Victoria Lo"
-bio: "This is my bio."
+bio: "Leader @ Women Devs SG"
 core: true
 socials:
   - name: "LinkedIn"
@@ -11,5 +11,5 @@ socials:
     href: "https://github.com/victoria-lo"
 url: https://lo-victoria.com
 badges: 
-  - evangelist
+  - leader
 ---

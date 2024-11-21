@@ -1,0 +1,13 @@
+---
+name: "Toshal Patel"
+bio: "Director @ Women Devs SG"
+core: true
+socials:
+  - name: "LinkedIn"
+    href: "https://www.linkedin.com/in/toshalpatel/"
+  - name: "Github"
+    href: "https://github.com/toshalpatel"
+
+badges: 
+  - director
+---
