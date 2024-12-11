@@ -1,5 +1,5 @@
 ---
-author: Sinduja Vijayakumar & Mansi Agarwal
+author: Sinduja Vijayakumar & Manaswini Talagadadivi
 pubDatetime: 2024-12-11T10:22:00Z
 title: Hardware - The Unsung Catalyst of the Technology Era
 slug: hardware-the-unsung-catalyst-of-the-technology-era
