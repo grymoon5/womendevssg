@@ -36,7 +36,8 @@ Before you dive in:
 
 1. **Read Our Code of Conduct:** This ensures a welcoming and collaborative space for everyone.  
 2. **Check Existing Issues:** Look for open issues in the repository to see where help is needed.  
-3. **Start Small:** We label beginner-friendly issues as `good first issue` to help you ease into the project.  
+3. **Start Small:** We label beginner-friendly issues as `good first issue` to help you ease into the project.
+4. **Add yourself as a member:** If you are a WDS member, feel free to read how to [add your own profile](../src/content/blog/adding-yourself-as-member.md) to our website.
 
 ---
 

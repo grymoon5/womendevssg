@@ -1,5 +1,5 @@
 ---
-name: "Regular Member"
+name: "Example Member"
 bio: "This is my bio."
 core: false
 socials:
