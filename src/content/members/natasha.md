@@ -1,6 +1,6 @@
 ---
-name: "Partnerships Lead"
-bio: "Software engineer and ragTech tech podcast host! [natashaannn.com](https://natashaannn.com/)"
+name: "Natasha Ann"
+bio: "Partnerships Lead @ Women Devs SG"
 core: true
 socials:
   - name: "LinkedIn"
@@ -11,4 +11,7 @@ socials:
     href: "https://github.com/natashaannn"
   - name: "TikTok"
     href: "https://www.tiktok.com/@natashaannn?lang=en:"
+url: https://natashaannn.com/
+badges:
+ - leader
 ---
