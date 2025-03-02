@@ -10,4 +10,5 @@ socials:
 
 badges: 
   - director
+rank: 2
 ---
