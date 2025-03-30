@@ -31,7 +31,7 @@ Here is the list of frontmatter property for each post.
 | **_modDatetime_**  | Modified datetime in ISO 8601 format. (only add this property when a blog post is modified) | optional                                      |
 | **_author_**       | Author of the post.                                                                         | default = SITE.author                         |
 | **_slug_**         | Slug for the post. This field is optional but cannot be an empty string. (slug: ""❌)       | default = slugified file name                 |
-| **_featured_**     | Whether or not display this post in featured section of home page                           | default = false                               |
+| **_featured_**     | Whether or not to display this post in Resources section under About Us                     | default = false                               |
 | **_draft_**        | Mark this post 'unpublished'.                                                               | default = false                               |
 | **_tags_**         | Related keywords for this post. Written in array yaml format.                               | default = others                              |
 | **_ogImage_**      | OG image of the post. Useful for social media sharing and SEO.                              | default = SITE.ogImage or generated OG image  |

@@ -4,7 +4,7 @@ pubDatetime: 2025-03-26T00:00:00Z
 modDatetime: 2025-03-26T00:00:00.000Z
 title: A Simple Guide to Product Strategy
 slug: a-simple-guide-to-product-strategy
-featured: true
+featured: false
 draft: false
 tags:
   - product
