@@ -14,7 +14,7 @@ import { getCollection } from "astro:content";
 
 const members = await getCollection("members");
 // Separate core members and regular members
-const coreMembers = members.filter(member => member.data.core);
+const coreMembers = members.filter(member => member.data.core).sort((a, b) => (a.data.rank ?? Infinity) - (b.data.rank ?? Infinity));
 const regularMembers = members.filter(member => !member.data.core);
 ---
 
@@ -23,7 +23,7 @@ const regularMembers = members.filter(member => !member.data.core);
   <MemberLayout pageTitle="Our Community" pageDesc="You can add yourself on this page by making a PR!">
 
     <h2 class="text-2xl mb-4 text-center font-semibold">Our leaders</h2>
-    <ul class="flex flex-wrap gap-4 mb-5">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {coreMembers.map(member => (
         <li class="flex-1 min-w-[260px]">
           <Member
@@ -41,7 +41,7 @@ const regularMembers = members.filter(member => !member.data.core);
     <Hr/>
 
     <h2 class="text-2xl my-4 text-center font-semibold">Our members</h2>
-    <ul class="flex flex-wrap gap-4 mt-6"> 
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> 
       {regularMembers.map(member => (
         <li class="flex-1 min-w-[260px]">
           <Member
